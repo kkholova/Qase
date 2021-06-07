@@ -16,7 +16,7 @@ public class BaseTest {
         password = System.getenv().getOrDefault("QASE_PASSWORD", PropertyReader.getProperty("qase.password"));
 //        Configuration.browser = "firefox";
 //        Configuration.clickViaJs = true;//клик через жс
-            Configuration.headless = true;
+            Configuration.headless = Boolean.getBoolean(PropertyReader.getProperty("headless"));
             Configuration.startMaximized = true;
             Configuration.timeout = 10000;
 
