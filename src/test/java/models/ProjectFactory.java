@@ -8,7 +8,11 @@ public class ProjectFactory {
         return Project.builder()
                 .projectName(faker.company().name())
                 .description("Description")
+                .accessType("Private")
+                .memberType("All")
                 .build();
 
     }
+
+
 }

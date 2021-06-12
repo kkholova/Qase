@@ -8,4 +8,6 @@ import lombok.Data;
 public class Project {
     String projectName;
     String description;
+    String accessType;
+    String memberType;
 }
