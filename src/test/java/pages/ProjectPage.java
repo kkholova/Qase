@@ -58,7 +58,8 @@ public class ProjectPage extends BasePage {
         log.info("Creating New project");
         String projectAccessType = project.getAccessType();
         String memberType = project.getMemberType();
-        TITLE.sendKeys(project.getProjectName());
+        TITLE.sendKeys(project.getTitle());
+        $("#inputCode").sendKeys(project.getCode());
         DESCRIPTION.sendKeys(project.getDescription());
         $(chooseAccessType(projectAccessType)).click();
         if (!projectAccessType.equals("Public")) {

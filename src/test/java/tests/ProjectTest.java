@@ -22,7 +22,7 @@ public class ProjectTest extends BaseTest {
         projectPage.submit();
         projectPage.projectIsCreated();
         Assert.assertTrue(projectPage.projectIsCreated(),"Project was not created");
-        Assert.assertTrue(projectPage.findProjectInTheProjectList(project.getProjectName()),"Project is not in the list of projects");
+        Assert.assertTrue(projectPage.findProjectInTheProjectList(project.getTitle()),"Project is not in the list of projects");
     }
 
     @Test
@@ -35,7 +35,7 @@ public class ProjectTest extends BaseTest {
         projectPage.submit();
         projectPage.openSettings();
         projectPage.updateProject();
-        Assert.assertTrue(projectPage.checkProjectNameIsUpdated(project.getProjectName()),"Project is not updated");
+        Assert.assertTrue(projectPage.checkProjectNameIsUpdated(project.getTitle()),"Project is not updated");
     }
 
     @Test
@@ -47,7 +47,7 @@ public class ProjectTest extends BaseTest {
         projectPage.createNewProject(project);
         projectPage.submit();
         projectPage.deleteProjectFromSettings();
-        Assert.assertTrue(projectPage.checkProjectWasDeleted(project.getProjectName()),"Project was not deleted");
+        Assert.assertTrue(projectPage.checkProjectWasDeleted(project.getTitle()),"Project was not deleted");
 
     }
 }
