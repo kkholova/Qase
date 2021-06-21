@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 
@@ -13,6 +14,7 @@ public class LoginTest extends BaseTest {
     public void login() {
         //https://app.qase.io/login
         loginPage.openLoginPage();
+        Assert.assertTrue(loginPage.isPageOpened(),"Login page was not opened");
         loginPage.login(user, password);
         $("#user-menu").shouldBe(Condition.visible);
 
